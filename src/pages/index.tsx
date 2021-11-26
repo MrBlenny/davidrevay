@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import styles from '@/styles/Home.module.css';
+import Background from '@/components/background';
 
 export default function Home() {
   return (
@@ -14,43 +15,35 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Background />
       <main className={styles.main}>
-        <h1 className={styles.title}>Hey!</h1>
+        <h1 className={styles.title}>Hey, I&apos;m David</h1>
 
         <p className={styles.description}>
-          I&apos;m David, an aerospace engineer, roboticist and
-          <code className={styles.code}>software developer</code>
+          I&apos;m David, an aerospace engineer, roboticist and software
+          developer based in Sydney
         </p>
-
-        <div className={styles.grid}>
-          {/* <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=typescript-nextjs-starter"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a> */}
+        <div className={styles.body}>
+          <p>
+            As an aerospace engineer turned startup founder, software developer
+            and roboticist, I give a damn about clean code, open-source and
+            robots for good. I&apos;ve developed control systems for high
+            altitude autonomous balloons, augmented reality that runs on
+            hundreds of commercial aircraft, collaborative open-source platforms
+            for scientists and engineers, optical radar search and rescue
+            systems, fully autonomous and remote-operated boats, and mission
+            systems for depth-defying submarines exploring the Mariana Trench.
+          </p>
+          <p>
+            I&apos;m constantly (and somewhat obsessively) learning - spanning
+            the entire tech stack from UI/UX and front-end progressive web
+            applications to data science, computer vision and robotic control
+            systems. I pride myself on pragmatic, concise, readable and
+            performant code, while my UI sensibilities tend towards sci-fi
+            futurism. Whether navigating the stratosphere or the deepest depths
+            of the ocean, I hope to build creative tech solutions that
+            contribute to our collective knowledge.
+          </p>
         </div>
       </main>
 
