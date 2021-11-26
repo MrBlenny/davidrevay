@@ -21,55 +21,47 @@ export default function Home() {
 
         <p className={styles.description}>
           I&apos;m an aerospace engineer turned startup founder, software
-          developer and roboticist based in Sydney
+          developer and roboticist based in Sydney, Australia. I primarily work
+          in web tech, data-science and maritime robotics. <br />
+          <br />
+          Currently working on autonomous boats, deep water subs and optical
+          radars{` `}
+          <a
+            href="https://greenroomrobotics.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @Greenroom Robotics
+          </a>
+          .
         </p>
-        <div className={styles.body}>
-          <p>
-            I give a damn about clean code, open-source and robots for good.
-            I&apos;ve developed control systems for high altitude autonomous
-            balloons, augmented reality that runs on hundreds of commercial
-            aircraft, collaborative open-source platforms for scientists and
-            engineers, optical radar search and rescue systems, fully autonomous
-            and remote-operated boats, and mission systems for depth-defying
-            submarines exploring the Mariana Trench.
-          </p>
-          <p>
-            I&apos;m constantly (and somewhat obsessively) learning - spanning
-            the entire tech stack from UI/UX and front-end progressive web
-            applications to data science, computer vision and robotic control
-            systems. I pride myself on pragmatic, concise, readable and
-            performant code, while my UI sensibilities tend towards sci-fi
-            futurism. Whether navigating the stratosphere or the deepest depths
-            of the ocean, I hope to build creative tech solutions that
-            contribute to our collective knowledge.
-          </p>
-        </div>
       </main>
 
       <footer className={styles.footer}>
+        <a
+          href="https://github.com/MrBlenny"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className={styles.logo}>
+            <Image src="/github.png" alt="Github Logo" width={32} height={32} />
+            CODE
+          </div>
+        </a>
         <a
           href="https://www.linkedin.com/in/revay"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className={styles.logo}>
+          <div className={styles.logo}>
             <Image
               src="/linkedin.png"
               alt="Linkedin Logo"
               width={32}
               height={32}
             />
-          </span>
-        </a>
-
-        <a
-          href="https://github.com/MrBlenny"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className={styles.logo}>
-            <Image src="/github.png" alt="Github Logo" width={32} height={32} />
-          </span>
+            BIO
+          </div>
         </a>
       </footer>
     </div>

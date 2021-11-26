@@ -1,9 +1,12 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .main {
+  position: relative;
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -24,21 +27,28 @@
 
 .footer a {
   height: 40px;
-  width: 40px;
-  background: white;
+  background: #7a98ee;
   padding: 5px;
   border-radius: 5px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  filter: drop-shadow(2px 0px 4px #7a98ee);
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.description a {
+  color: #dd517e;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease all;
+}
+
+.description a:hover,
+.description a:focus,
+.description a:active {
+  filter: drop-shadow(1px 0px 4px #dd517e);
 }
 
 .title {
@@ -62,14 +72,28 @@
   margin-top: 2em;
   max-width: 600px;
   color: #b1b1b1;
+  text-align: center;
+}
+
+.more {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+  color: black;
+  font-weight: bold;
+  gap: 5px;
+  align-items: center;
+  
 }
 
 @media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
   .body {
     display: none;
+  }
+  .description {
+    font-size: 1.2rem;
   }
 }

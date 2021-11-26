@@ -31,7 +31,6 @@ export default function Background() {
       leftIris,
       rightEye,
       leftEye,
-      lipsFish,
       sideRightFish,
       sideLeftFish,
       tooth1,
@@ -42,21 +41,13 @@ export default function Background() {
 
     // FISH SPEED
     // the colors are splitted into rgb values to facilitate the transition of the color
-    var fishFastColor = { r: 107, g: 149, b: 72 }; // pastel blue
-    var fishSlowColor = { r: 56, g: 85, b: 201 }; // purple
+    var fishFastColor = { r: 122, g: 152, b: 238 }; // pastel blue
+    var fishSlowColor = { r: 85, g: 108, b: 201 }; // purple
     var angleFin = 0; // angle used to move the fishtail
 
     // PARTICLES COLORS
     // array used to store a color scheme to randomly tint the particles
-    var colors = [
-      '#dff69e',
-      '#00ceff',
-      '#002bca',
-      '#ff00e0',
-      '#3f159f',
-      '#71b583',
-      '#00a2ff',
-    ];
+    var colors = ['#a800bd', '#dd517e', '#e68e35', '#556cc9', '#7a98ee'];
 
     // PARTICLES
     // as the particles are recycled, I use 2 arrays to store them
@@ -169,8 +160,8 @@ export default function Background() {
     }
 
     function updateSpeed() {
-      speed.x = (mousePos.x / WIDTH) * 100;
-      speed.y = (mousePos.y - windowHalfY) / 10;
+      speed.x = (mousePos.x / WIDTH) * 50;
+      speed.y = (mousePos.y - windowHalfY) / 20;
     }
 
     function loop() {
@@ -220,7 +211,6 @@ export default function Background() {
       var bvalue =
         (fishSlowColor.b + (fishFastColor.b - fishSlowColor.b) * s2) / 255;
       bodyFish.material.color.setRGB(rvalue, gvalue, bvalue);
-      lipsFish.material.color.setRGB(rvalue, gvalue, bvalue);
 
       //scale update depending on the speed => make the fish struggling to progress
       fish.scale.set(1 + s3, 1 - s3, 1 - s3);
@@ -248,9 +238,9 @@ export default function Background() {
     // I use 2 lights, an hemisphere to give a global ambient light
     // And a harder light to add some shadows
     function createLight() {
-      light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.3);
+      light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.8);
       scene.add(light);
-      shadowLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      shadowLight = new THREE.DirectionalLight(0xffffff, 0.5);
       shadowLight.position.set(1, 1, 1);
       scene.add(shadowLight);
     }
@@ -262,31 +252,21 @@ export default function Background() {
 
       // Body
       var bodyGeom = new THREE.BoxGeometry(120, 120, 120);
-      var bodyMat = new THREE.MeshLambertMaterial({
-        color: 0x6b9548,
+      var bodyMat = new THREE.MeshPhongMaterial({
+        color: 0xe68e35,
       });
       bodyFish = new THREE.Mesh(bodyGeom, bodyMat);
 
       // Tail
       var tailGeom = new THREE.CylinderGeometry(1, 60, 60, 4);
-      var tailMat = new THREE.MeshLambertMaterial({
-        color: 0x6b9548,
+      var tailMat = new THREE.MeshPhongMaterial({
+        color: 0xe68e35,
       });
 
       tailFish = new THREE.Mesh(tailGeom, tailMat);
       tailFish.scale.set(0.8, 1, 0.1);
       tailFish.position.x = -60;
       tailFish.rotation.z = -halfPI;
-
-      // Lips
-      var lipsGeom = new THREE.BoxGeometry(25, 10, 120);
-      var lipsMat = new THREE.MeshLambertMaterial({
-        color: 0x80f5fe,
-      });
-      lipsFish = new THREE.Mesh(lipsGeom, lipsMat);
-      lipsFish.position.x = 65;
-      lipsFish.position.y = -47;
-      lipsFish.rotation.z = halfPI;
 
       // Fins
       topFish = new THREE.Mesh(tailGeom, tailMat);
@@ -313,7 +293,7 @@ export default function Background() {
 
       // Eyes
       var eyeGeom = new THREE.BoxGeometry(40, 40, 5);
-      var eyeMat = new THREE.MeshLambertMaterial({
+      var eyeMat = new THREE.MeshPhongMaterial({
         color: 0xffffff,
       });
 
@@ -323,7 +303,7 @@ export default function Background() {
       rightEye.position.y = -10;
 
       var irisGeom = new THREE.BoxGeometry(10, 10, 3);
-      var irisMat = new THREE.MeshLambertMaterial({
+      var irisMat = new THREE.MeshPhongMaterial({
         color: 0x330000,
       });
 
@@ -343,44 +323,16 @@ export default function Background() {
       leftIris.position.y = -10;
 
       var toothGeom = new THREE.BoxGeometry(20, 4, 20);
-      var toothMat = new THREE.MeshLambertMaterial({
-        color: 0xffffff,
+      var toothMat = new THREE.MeshPhongMaterial({
+        color: 0xdd517e,
       });
 
       // Teeth
-      tooth1 = new THREE.Mesh(toothGeom, toothMat);
-      tooth1.position.x = 65;
-      tooth1.position.y = -35;
-      tooth1.position.z = -50;
-      tooth1.rotation.z = halfPI;
-      tooth1.rotation.x = -halfPI;
-
-      tooth2 = new THREE.Mesh(toothGeom, toothMat);
-      tooth2.position.x = 65;
-      tooth2.position.y = -30;
-      tooth2.position.z = -25;
-      tooth2.rotation.z = halfPI;
-      tooth2.rotation.x = -Math.PI / 12;
-
       tooth3 = new THREE.Mesh(toothGeom, toothMat);
       tooth3.position.x = 65;
       tooth3.position.y = -25;
       tooth3.position.z = 0;
       tooth3.rotation.z = halfPI;
-
-      tooth4 = new THREE.Mesh(toothGeom, toothMat);
-      tooth4.position.x = 65;
-      tooth4.position.y = -30;
-      tooth4.position.z = 25;
-      tooth4.rotation.z = halfPI;
-      tooth4.rotation.x = Math.PI / 12;
-
-      tooth5 = new THREE.Mesh(toothGeom, toothMat);
-      tooth5.position.x = 65;
-      tooth5.position.y = -35;
-      tooth5.position.z = 50;
-      tooth5.rotation.z = halfPI;
-      tooth5.rotation.x = Math.PI / 8;
 
       fish.add(bodyFish);
       fish.add(tailFish);
@@ -391,12 +343,7 @@ export default function Background() {
       fish.add(rightIris);
       fish.add(leftEye);
       fish.add(leftIris);
-      fish.add(tooth1);
-      fish.add(tooth2);
       fish.add(tooth3);
-      fish.add(tooth4);
-      fish.add(tooth5);
-      fish.add(lipsFish);
 
       fish.rotation.y = -Math.PI / 4;
       scene.add(fish);
@@ -430,7 +377,9 @@ export default function Background() {
       }
 
       // Choose a color for each particle and create the mesh
-      var materialCore = new THREE.MeshLambertMaterial({
+      var materialCore = new THREE.MeshPhongMaterial({
+        wireframe: true,
+        wireframeLinewidth: 2,
         color: getRandomColor(),
       });
       particle = new THREE.Mesh(geometryCore, materialCore);
