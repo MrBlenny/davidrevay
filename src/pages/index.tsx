@@ -7,28 +7,26 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>TypeScript starter for Next.js</title>
+        <title>David Revay</title>
         <meta
           name="description"
-          content="TypeScript starter for Next.js that includes all you need to build amazing apps"
+          content="Aerospace Engineer + Software Developer"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Hey!
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{` `}
-          <code className={styles.code}>pages/index.tsx</code>
+          I'm David, an aerospace engineer, roboticist and 
+          <code className={styles.code}>software developer</code>
         </p>
 
-        <p className={styles.description}>This is not an official starter!</p>
-
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
+          {/* <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>
             <p>Find in-depth information about Next.js features and API.</p>
           </a>
@@ -54,19 +52,28 @@ export default function Home() {
             <p>
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
-          </a>
+          </a> */}
         </div>
       </main>
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=typescript-nextjs-starter"
+          href="https://www.linkedin.com/in/revay"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{` `}
           <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <Image src="/linkedin.png" alt="Linkedin Logo" width={32} height={32} />
+          </span>
+        </a>
+
+        <a
+          href="https://github.com/MrBlenny"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className={styles.logo}>
+            <Image src="/github.png" alt="Github Logo" width={32} height={32} />
           </span>
         </a>
       </footer>
