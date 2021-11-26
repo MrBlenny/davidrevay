@@ -20,19 +20,18 @@ export default function Home() {
         <h1 className={styles.title}>Hey, I&apos;m David</h1>
 
         <p className={styles.description}>
-          I&apos;m David, an aerospace engineer, roboticist and software
-          developer based in Sydney
+          I&apos;m an aerospace engineer turned startup founder, software
+          developer and roboticist based in Sydney
         </p>
         <div className={styles.body}>
           <p>
-            As an aerospace engineer turned startup founder, software developer
-            and roboticist, I give a damn about clean code, open-source and
-            robots for good. I&apos;ve developed control systems for high
-            altitude autonomous balloons, augmented reality that runs on
-            hundreds of commercial aircraft, collaborative open-source platforms
-            for scientists and engineers, optical radar search and rescue
-            systems, fully autonomous and remote-operated boats, and mission
-            systems for depth-defying submarines exploring the Mariana Trench.
+            I give a damn about clean code, open-source and robots for good.
+            I&apos;ve developed control systems for high altitude autonomous
+            balloons, augmented reality that runs on hundreds of commercial
+            aircraft, collaborative open-source platforms for scientists and
+            engineers, optical radar search and rescue systems, fully autonomous
+            and remote-operated boats, and mission systems for depth-defying
+            submarines exploring the Mariana Trench.
           </p>
           <p>
             I&apos;m constantly (and somewhat obsessively) learning - spanning
