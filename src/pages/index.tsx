@@ -16,12 +16,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hey!
-        </h1>
+        <h1 className={styles.title}>Hey!</h1>
 
         <p className={styles.description}>
-          I'm David, an aerospace engineer, roboticist and 
+          I&apos;m David, an aerospace engineer, roboticist and
           <code className={styles.code}>software developer</code>
         </p>
 
@@ -63,7 +61,12 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <span className={styles.logo}>
-            <Image src="/linkedin.png" alt="Linkedin Logo" width={32} height={32} />
+            <Image
+              src="/linkedin.png"
+              alt="Linkedin Logo"
+              width={32}
+              height={32}
+            />
           </span>
         </a>
 
