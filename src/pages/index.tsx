@@ -14,6 +14,12 @@ export default function Home() {
           content="Aerospace Engineer + Software Developer"
         />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <Background />
       <main className={styles.main}>
@@ -21,11 +27,12 @@ export default function Home() {
 
         <p className={styles.description}>
           I&apos;m an aerospace engineer turned startup founder, software
-          developer and roboticist based in Sydney, Australia. I primarily work
-          in web tech, data-science and maritime robotics. <br />
+          developer and roboticist based in Sydney, Australia. I give a damn
+          about clean code, open-source and robots for good.
           <br />
-          Currently working on autonomous boats, deep water subs and optical
-          radars{` `}
+          <br />
+          I&apos;m currently working on autonomous boats, deep water subs and
+          optical radars{` `}
           <a
             href="https://greenroomrobotics.com"
             target="_blank"

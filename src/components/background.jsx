@@ -7,6 +7,7 @@ export default function Background() {
   useEffect(() => {
     //THREEJS RELATED VARIABLES
 
+    const speedMulti = 0.1;
     var scene,
       camera,
       fieldOfView,
@@ -33,11 +34,7 @@ export default function Background() {
       leftEye,
       sideRightFish,
       sideLeftFish,
-      tooth1,
-      tooth2,
-      tooth3,
-      tooth4,
-      tooth5;
+      tooth3;
 
     // FISH SPEED
     // the colors are splitted into rgb values to facilitate the transition of the color
@@ -251,11 +248,14 @@ export default function Background() {
       // each part needs a geometry, a material, and a mesh
 
       // Body
-      var bodyGeom = new THREE.BoxGeometry(120, 120, 120);
-      var bodyMat = new THREE.MeshPhongMaterial({
+      var bodyGeom = new THREE.CylinderGeometry(1, 60, 200, 4);
+      var bodyMat = new THREE.MeshBasicMaterial({
         color: 0xe68e35,
+        wireframe: true,
+        wireframeLinewidth: 2,
       });
       bodyFish = new THREE.Mesh(bodyGeom, bodyMat);
+      bodyFish.rotation.z = -halfPI;
 
       // Tail
       var tailGeom = new THREE.CylinderGeometry(1, 60, 60, 4);
@@ -335,15 +335,15 @@ export default function Background() {
       tooth3.rotation.z = halfPI;
 
       fish.add(bodyFish);
-      fish.add(tailFish);
-      fish.add(topFish);
-      fish.add(sideRightFish);
-      fish.add(sideLeftFish);
-      fish.add(rightEye);
-      fish.add(rightIris);
-      fish.add(leftEye);
-      fish.add(leftIris);
-      fish.add(tooth3);
+      // fish.add(tailFish);
+      // fish.add(topFish);
+      // fish.add(sideRightFish);
+      // fish.add(sideLeftFish);
+      // fish.add(rightEye);
+      // fish.add(rightIris);
+      // fish.add(leftEye);
+      // fish.add(leftIris);
+      // fish.add(tooth3);
 
       fish.rotation.y = -Math.PI / 4;
       scene.add(fish);
